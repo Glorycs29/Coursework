@@ -115,3 +115,64 @@ A classic illustration of multi-class classification is handwritten digit recogn
 In medical diagnosis, multi-class classification can be used to categorize a patient's symptoms or test results into different disease categories. For instance, a system could classify symptoms into categories like cold, flu, allergies, or no illness.
 
 In summary, binary classification involves categorizing data into two classes, while multi-class classification involves categorizing data into more than two classes. These classification techniques are fundamental in a wide range of real-life applications, including email filtering, credit approval, handwriting recognition, and medical diagnosis.
+
+
+----
+
+## Cost Functions in Logistic Regression
+
+**Question:**
+Could you provide a detailed explanation of the various cost functions used in Logistic Regression?
+
+**Answer:**
+
+In logistic regression, a crucial step is to define a cost function that the algorithm tries to minimize during training. The cost function quantifies the error between the predicted values and the actual labels, guiding the optimization process. Here are the commonly used cost functions in logistic regression:
+
+1. **Binary Cross-Entropy Loss (Log Loss):**
+
+   The binary cross-entropy loss is the most common cost function used in binary logistic regression. It's defined as:
+
+   ```latex
+   J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)}\log(h_\theta(x^{(i)})) + (1 - y^{(i)})\log(1 - h_\theta(x^{(i)}))]
+   ```
+
+   where:
+   - \( m \) is the number of training examples.
+   - \( h_\theta(x) \) is the predicted probability of the positive class.
+   - \( y \) is the actual label (0 or 1).
+
+   The goal is to minimize this function by adjusting the model parameters (\( \theta \)).
+
+2. **Categorical Cross-Entropy Loss:**
+
+   Categorical cross-entropy is an extension of binary cross-entropy for multi-class classification problems. It's used when the target variable can belong to more than two classes. The formula is:
+
+   ```latex
+   J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} \sum_{k=1}^{K} y_k^{(i)}\log(h_\theta(x^{(i)}))
+   ```
+
+   where:
+   - \( K \) is the number of classes.
+   - \( y_k^{(i)} \) is a binary indicator (0 or 1) if class \( k \) is the correct classification for example \( i \).
+
+3. **Mean Squared Error (MSE):**
+
+   Although not as common as cross-entropy for logistic regression, MSE can be used as a cost function. It's defined as:
+
+   ```latex
+   J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2
+   ```
+
+   This cost function is more suitable for regression problems.
+
+4. **Hinge Loss (SVM Loss):**
+
+   Hinge loss is often used in support vector machine (SVM) classifiers but can also be adapted for logistic regression. It's defined as:
+
+   ```latex
+   J(\theta) = \frac{1}{m} \sum_{i=1}^{m} \max(0, 1 - y^{(i)} \cdot h_\theta(x^{(i)}))
+   ```
+
+   The objective is to maximize the margin between classes.
+
+Each of these cost functions has its own characteristics and is suitable for different types of problems. The choice of the cost function depends on the nature of the problem (binary or multi-class classification) and the specific objectives of the model. Generally, cross-entropy losses (binary and categorical) are widely preferred for logistic regression due to their suitability for classification tasks and their optimization properties.
