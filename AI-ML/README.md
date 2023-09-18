@@ -79,3 +79,39 @@ Learning rate is a crucial hyperparameter used in optimization algorithms, espec
 Choosing an appropriate learning rate is crucial for successful training. If the learning rate is too high, the optimization process may be unstable and fail to converge. If the learning rate is too low, the training process may take an impractically long time to converge, or it may get stuck in a suboptimal solution.
 
 To address this issue, techniques like **learning rate schedules** and adaptive learning rate methods (e.g., Adam, RMSprop) have been developed to automatically adjust the learning rate during training. These methods can adaptively decrease the learning rate as the optimization process progresses, allowing for faster convergence in the initial stages and more fine-grained adjustments as it approaches the minimum of the loss function.
+
+----
+
+
+
+## Question: 
+a. **Binary classification is a type of machine learning task. Could you explain what it entails and provide an example?**
+
+## Answer:
+Binary classification involves categorizing input data into one of two possible categories or classes, often denoted as positive and negative classes (or class 1 and class 0). The goal is for the model to learn a decision boundary that separates the data into these two classes.
+
+*Example: Spam Email Detection*
+
+In email filtering, a common application of binary classification is spam email detection. The objective is to determine whether an email is spam (class 1) or not spam (class 0) based on features such as the email content, sender's address, or subject.
+
+*Application: Credit Approval*
+
+Another instance of binary classification is credit approval, where the objective is to predict whether a loan application will be approved (class 1) or denied (class 0) based on various factors like credit score, income, employment status, and loan amount requested.
+
+--- 
+
+## Question: 
+b. **What is multi-class classification in the context of machine learning, and could you provide an example to illustrate it?**
+
+## Answer:
+Multi-class classification is a machine learning task where the goal is to classify input data into more than two distinct classes or categories. Each data instance is assigned to only one class.
+
+*Example: Handwritten Digit Recognition*
+
+A classic illustration of multi-class classification is handwritten digit recognition. The task is to classify images of handwritten digits (0-9) into the appropriate digit class. Each digit corresponds to a distinct class, making it a multi-class classification problem.
+
+*Application: Medical Diagnosis*
+
+In medical diagnosis, multi-class classification can be used to categorize a patient's symptoms or test results into different disease categories. For instance, a system could classify symptoms into categories like cold, flu, allergies, or no illness.
+
+In summary, binary classification involves categorizing data into two classes, while multi-class classification involves categorizing data into more than two classes. These classification techniques are fundamental in a wide range of real-life applications, including email filtering, credit approval, handwriting recognition, and medical diagnosis.
